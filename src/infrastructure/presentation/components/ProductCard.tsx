@@ -13,6 +13,10 @@ export const ProductCard = ({ product }: Props) => {
                 src={product.images?.mainImage || '/path/to/default/image.png'}
                 alt={product.name}
                 className="product-image"
+                style={{
+                    boxShadow: '0px 0px 15px 5px rgba(0,0,0,0.2)', 
+                    borderRadius: '50%', 
+                  }} 
             />
             <div className="product-info">
                 <h4 className="product-name">{product.name}</h4>

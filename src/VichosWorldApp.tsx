@@ -15,8 +15,8 @@ export const VichosWorldApp = () => {
 
     const [productsToShow, setProductsToShow] = useState<Product[]>([])
 
-    const phoneNumber = '+525574462403'; // Reemplaza con el número de teléfono correcto
-    const message = 'Me interesa algunos productos que he visto en Vicho´s World'; // Mensaje predefinido
+    const phoneNumber = '+525574462403'; 
+    const message = 'Me interesa algunos productos que he visto en Vicho´s World'; 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     useEffect(() => {
@@ -59,21 +59,24 @@ export const VichosWorldApp = () => {
 
     return (
         <>
-            <img src={logo} alt="Logo de la aplicación" className="app-logo" />
+            <img  style={{
+    boxShadow: '0px 0px 15px 5px rgba(0,0,0,0.75)', 
+    borderRadius: '35%', 
+  }} src={logo} alt="Logo de la aplicación" className="app-logo" />
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginBottom: '8px', marginTop: '16px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', width: '200px', marginBottom: '8px' }}>
                     <div style={{
-                        backgroundColor: '#b5d86d', // Color de fondo
-                        color: 'white', // Color del texto
-                        border: 'none', // Sin borde
-                        padding: '10px 20px', // Relleno
-                        textAlign: 'center', // Alineación del texto
-                        textDecoration: 'none', // Sin decoración de texto
-                        display: 'inline-block', // Display
-                        fontSize: '16px', // Tamaño de la fuente
-                        margin: '4px 2px', // Margen
-                        cursor: 'pointer', // Cursor
-                        borderRadius: '4px' // Radio del borde
+                        backgroundColor: '#b5d86d', 
+                        color: 'white', 
+                        border: 'none',  
+                        padding: '10px 20px', 
+                        textAlign: 'center', 
+                        textDecoration: 'none', 
+                        display: 'inline-block', 
+                        fontSize: '16px', 
+                        margin: '4px 2px', 
+                        cursor: 'pointer', 
+                        borderRadius: '4px' 
                     }}>
                         <input
                             type="radio"
@@ -84,17 +87,17 @@ export const VichosWorldApp = () => {
                         <label style={{ background: '#b5d86d' }}>Nombre</label>
                     </div>
                     <div style={{
-                        backgroundColor: '#b5d86d', // Color de fondo
-                        color: 'white', // Color del texto
-                        border: 'none', // Sin borde
-                        padding: '10px 20px', // Relleno
-                        textAlign: 'center', // Alineación del texto
-                        textDecoration: 'none', // Sin decoración de texto
-                        display: 'inline-block', // Display
-                        fontSize: '16px', // Tamaño de la fuente
-                        margin: '4px 2px', // Margen
-                        cursor: 'pointer', // Cursor
-                        borderRadius: '4px' // Radio del borde
+                         backgroundColor: '#b5d86d', 
+                         color: 'white', 
+                         border: 'none',  
+                         padding: '10px 20px', 
+                         textAlign: 'center', 
+                         textDecoration: 'none', 
+                         display: 'inline-block', 
+                         fontSize: '16px', 
+                         margin: '4px 2px', 
+                         cursor: 'pointer', 
+                         borderRadius: '4px' 
                     }}>
                         <input
                             type="radio"
@@ -125,17 +128,17 @@ export const VichosWorldApp = () => {
 
                 <button
                     style={{
-                        backgroundColor: '#b5d86d', // Color de fondo
-                        color: 'white', // Color del texto
-                        border: 'none', // Sin borde
-                        padding: '10px 20px', // Relleno
-                        textAlign: 'center', // Alineación del texto
-                        textDecoration: 'none', // Sin decoración de texto
-                        display: 'inline-block', // Display
-                        fontSize: '16px', // Tamaño de la fuente
-                        margin: '4px 2px', // Margen
-                        cursor: 'pointer', // Cursor
-                        borderRadius: '4px' // Radio del borde
+                        backgroundColor: '#b5d86d', 
+                        color: 'white', 
+                        border: 'none',  
+                        padding: '10px 20px', 
+                        textAlign: 'center', 
+                        textDecoration: 'none', 
+                        display: 'inline-block', 
+                        fontSize: '16px', 
+                        margin: '4px 2px', 
+                        cursor: 'pointer', 
+                        borderRadius: '4px' 
                     }}
 
                     onClick={() => {
@@ -162,20 +165,18 @@ export const VichosWorldApp = () => {
                     bottom: '20px',
                     right: '20px',
                     zIndex: 1000,
-                    // Agrega más estilos según sea necesario
-
-                    backgroundColor: '#b5d86d', // Color de fondo
-                    color: 'white', // Color del texto
+                    backgroundColor: '#b5d86d', 
+                    color: 'white', 
 
                     border: '3px solid #ead294',
-                    padding: '10px 20px', // Relleno
-                    textAlign: 'center', // Alineación del texto
-                    textDecoration: 'none', // Sin decoración de texto
-                    display: 'inline-block', // Display
-                    fontSize: '16px', // Tamaño de la fuente
-                    margin: '4px 2px', // Margen
-                    cursor: 'pointer', // Cursor
-                    borderRadius: '4px' // Radio del borde
+                    padding: '10px 20px', 
+                    textAlign: 'center', 
+                    textDecoration: 'none', 
+                    display: 'inline-block', 
+                    fontSize: '16px', 
+                    margin: '4px 2px', 
+                    cursor: 'pointer', 
+                    borderRadius: '4px' 
 
                 }}
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -191,9 +192,12 @@ export const VichosWorldApp = () => {
                         bottom: '20px',
                         left: '20px',
                         zIndex: 1000,
-                        // width: '10%',
                         height: '7%',
                         cursor: 'pointer',
+
+                            boxShadow: '0px 0px 15px 5px rgba(0,0,0,0.75)', 
+                            borderRadius: '35%', 
+
                     }}
 
                 />

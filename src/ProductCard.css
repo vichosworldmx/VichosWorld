@@ -15,7 +15,7 @@
     width: 100%;
     height: 300px;
     object-fit: contain;
-    background-color: #b5d86d;
+    background-color: #46afdf;
   }
   @media (max-width: 600px) {
     .product-image {
