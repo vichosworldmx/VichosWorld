@@ -3,9 +3,10 @@ import { vichosWorldProductsRepositoryApi } from "./repositories/VichosWorld-Pro
 import { Product } from "./domain/entities/products"
 import { ProductCard } from "./infrastructure/presentation/components/ProductCard"
 import logo from './assets/vichosworld.png';
+import whastap from './assets/wa.png';
 
 export const VichosWorldApp = () => {
-    let getProducts= true
+    let getProducts = true
     const [isLoading, setIsLoading] = useState(false);
 
     const [productToSearch, setProductToSearch] = useState('')
@@ -58,82 +59,145 @@ export const VichosWorldApp = () => {
 
     return (
         <>
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-
-        <img src={logo} alt="Logo de la aplicación" className="app-logo" />
-        </a>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginBottom:'8px', marginTop:'16px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '200px', marginBottom:'8px' }}>
-                <div>
-                    <input
-                        type="radio"
-                        value="name"
-                        checked={searchType === 'name'}
-                        onChange={(e) => setSearchType(e.target.value)}
-                    />
-                    <label>Nombre</label>
+            <img src={logo} alt="Logo de la aplicación" className="app-logo" />
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginBottom: '8px', marginTop: '16px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', width: '200px', marginBottom: '8px' }}>
+                    <div style={{
+                        backgroundColor: '#b5d86d', // Color de fondo
+                        color: 'white', // Color del texto
+                        border: 'none', // Sin borde
+                        padding: '10px 20px', // Relleno
+                        textAlign: 'center', // Alineación del texto
+                        textDecoration: 'none', // Sin decoración de texto
+                        display: 'inline-block', // Display
+                        fontSize: '16px', // Tamaño de la fuente
+                        margin: '4px 2px', // Margen
+                        cursor: 'pointer', // Cursor
+                        borderRadius: '4px' // Radio del borde
+                    }}>
+                        <input
+                            type="radio"
+                            value="name"
+                            checked={searchType === 'name'}
+                            onChange={(e) => setSearchType(e.target.value)}
+                        />
+                        <label style={{ background: '#b5d86d' }}>Nombre</label>
+                    </div>
+                    <div style={{
+                        backgroundColor: '#b5d86d', // Color de fondo
+                        color: 'white', // Color del texto
+                        border: 'none', // Sin borde
+                        padding: '10px 20px', // Relleno
+                        textAlign: 'center', // Alineación del texto
+                        textDecoration: 'none', // Sin decoración de texto
+                        display: 'inline-block', // Display
+                        fontSize: '16px', // Tamaño de la fuente
+                        margin: '4px 2px', // Margen
+                        cursor: 'pointer', // Cursor
+                        borderRadius: '4px' // Radio del borde
+                    }}>
+                        <input
+                            type="radio"
+                            value="barcode"
+                            checked={searchType === 'barcode'}
+                            onChange={(e) => setSearchType(e.target.value)}
+                        />
+                        <label style={{ background: '#b5d86d' }}>Código de barras</label>
+                    </div>
                 </div>
-                <div>
-                    <input
-                        type="radio"
-                        value="barcode"
-                        checked={searchType === 'barcode'}
-                        onChange={(e) => setSearchType(e.target.value)}
-                    />
-                    <label>Código de barras</label>
-                </div>
-            </div>
 
-            <input
-            style={{ marginBottom: '16px', marginTop: '16px', marginRight:'16px', width: '300px'}}
-                type="text"
-                value={productToSearch}
-                onChange={(e) => {
-                    setProductToSearch(e.target.value)
-                    if (searchType === 'name') {
-                        setProductsToShow(findByName(e.target.value))
-                    }
-                    if (searchType === 'barcode') {
-                        setProductsToShow(findByBarCode(e.target.value))
-                    }
+                <input
+                    style={{ marginBottom: '16px', marginTop: '16px', marginRight: '16px', width: '300px' }}
+                    type="text"
+                    value={productToSearch}
+                    onChange={(e) => {
+                        setProductToSearch(e.target.value)
+                        if (searchType === 'name') {
+                            setProductsToShow(findByName(e.target.value))
+                        }
+                        if (searchType === 'barcode') {
+                            setProductsToShow(findByBarCode(e.target.value))
+                        }
 
-                }}
-                placeholder={`Buscar por ${searchType === 'name' ? 'nombre' : 'código de barras'}`}
-            />
+                    }}
+                    placeholder={`Buscar por ${searchType === 'name' ? 'nombre' : 'código de barras'}`}
+                />
 
-            <button 
-            style={{
-                backgroundColor: '#b5d86d', // Color de fondo
-                color: 'white', // Color del texto
-                border: 'none', // Sin borde
-                padding: '10px 20px', // Relleno
-                textAlign: 'center', // Alineación del texto
-                textDecoration: 'none', // Sin decoración de texto
-                display: 'inline-block', // Display
-                fontSize: '16px', // Tamaño de la fuente
-                margin: '4px 2px', // Margen
-                cursor: 'pointer', // Cursor
-                borderRadius: '4px' // Radio del borde
-              }}
-            
-            onClick={() => {
-                setProductToSearch('') 
-                setProductsToShow(products)
-            }}
-            
-            >Limpiar Busqueda</button>
+                <button
+                    style={{
+                        backgroundColor: '#b5d86d', // Color de fondo
+                        color: 'white', // Color del texto
+                        border: 'none', // Sin borde
+                        padding: '10px 20px', // Relleno
+                        textAlign: 'center', // Alineación del texto
+                        textDecoration: 'none', // Sin decoración de texto
+                        display: 'inline-block', // Display
+                        fontSize: '16px', // Tamaño de la fuente
+                        margin: '4px 2px', // Margen
+                        cursor: 'pointer', // Cursor
+                        borderRadius: '4px' // Radio del borde
+                    }}
+
+                    onClick={() => {
+                        setProductToSearch('')
+                        setProductsToShow(products)
+                    }}
+
+                >Limpiar Busqueda</button>
             </div>
             <div>
-            {isLoading ? (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginBottom:'8px', marginTop:'16px' }}><h1 className="loading">Cargando ...</h1></div> 
-    ) :(
-           
-            <div className="card-grid">
-                {productsToShow.map((product) => (
-                    <ProductCard key={product.productId} product={product} />
-                ))}
-            </div> )}
- </div>
+                {isLoading ? (
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginBottom: '8px', marginTop: '16px' }}><h1 className="loading">Cargando ...</h1></div>
+                ) : (
+
+                    <div className="card-grid">
+                        {productsToShow.map((product) => (
+                            <ProductCard key={product.productId} product={product} />
+                        ))}
+                    </div>)}
+            </div>
+            <button
+                style={{
+                    position: 'fixed',
+                    bottom: '20px',
+                    right: '20px',
+                    zIndex: 1000,
+                    // Agrega más estilos según sea necesario
+
+                    backgroundColor: '#b5d86d', // Color de fondo
+                    color: 'white', // Color del texto
+
+                    border: '3px solid #ead294',
+                    padding: '10px 20px', // Relleno
+                    textAlign: 'center', // Alineación del texto
+                    textDecoration: 'none', // Sin decoración de texto
+                    display: 'inline-block', // Display
+                    fontSize: '16px', // Tamaño de la fuente
+                    margin: '4px 2px', // Margen
+                    cursor: 'pointer', // Cursor
+                    borderRadius: '4px' // Radio del borde
+
+                }}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+                Inicio
+            </button>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <img
+                    src={whastap}
+                    alt="WhatsApp Image"
+                    style={{
+                        position: 'fixed',
+                        bottom: '20px',
+                        left: '20px',
+                        zIndex: 1000,
+                        // width: '10%',
+                        height: '7%',
+                        cursor: 'pointer',
+                    }}
+
+                />
+            </a>
         </>
     )
 }

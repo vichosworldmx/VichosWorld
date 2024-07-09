@@ -19,9 +19,9 @@ export const ProductCard = ({ product }: Props) => {
 
                 <p className="product-category">{`Categoria: ${product.category}`}</p>
                 <p className="product-brands">{`Marca: ${product.brands}`}</p>
-                <p className="product-price">{`Precio: $${product.price}`}</p>
-                <p className="product-discountPrice">{discountPrice > 0 ? `Descuento: $${discountPrice}` : ``}</p>
                 <p className="product-stock">{`Stock: ${product.stock}`}</p>
+                <p className="product-price">{`Precio: $${product.price}`}</p>
+                <p className="product-discountPrice">{discountPrice > 0 ? `Precio con descuento: $${discountPrice}` : ``}</p>
             </div>
         </div>
     );
