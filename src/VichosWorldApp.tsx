@@ -3,7 +3,8 @@ import { vichosWorldProductsRepositoryApi } from "./repositories/VichosWorld-Pro
 import { Product } from "./domain/entities/products"
 import { ProductCard } from "./infrastructure/presentation/components/ProductCard"
 import logo from './assets/vichosworld.png';
-import whastap from './assets/wa.png';
+import whastapp from './assets/wa.png';
+import facebook from './assets/fb.png';
 
 export const VichosWorldApp = () => {
     let getProducts = true
@@ -18,6 +19,7 @@ export const VichosWorldApp = () => {
     const phoneNumber = '+525574462403'; 
     const message = 'Me interesa algunos productos que he visto en Vicho´s World'; 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const facebookURL = `https://www.facebook.com/vichosworld`;
 
     useEffect(() => {
         if (!getProducts) {
@@ -185,8 +187,27 @@ export const VichosWorldApp = () => {
             </button>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 <img
-                    src={whastap}
+                    src={whastapp}
                     alt="WhatsApp Image"
+                    style={{
+                        position: 'fixed',
+                        top: '35px',
+                        right: '20px',
+                        zIndex: 1000,
+                        height: '7%',
+                        cursor: 'pointer',
+
+                            boxShadow: '0px 0px 15px 5px rgba(0,0,0,0.2)', 
+                            borderRadius: '50%', 
+
+                    }}
+
+                />
+            </a>
+            <a href={facebookURL} target="_blank" rel="noopener noreferrer">
+                <img
+                    src={facebook}
+                    alt="FaceBook Image"
                     style={{
                         position: 'fixed',
                         bottom: '20px',
@@ -195,8 +216,8 @@ export const VichosWorldApp = () => {
                         height: '7%',
                         cursor: 'pointer',
 
-                            boxShadow: '0px 0px 15px 5px rgba(0,0,0,0.75)', 
-                            borderRadius: '35%', 
+                            boxShadow: '0px 0px 15px 5px rgba(0,0,0,0.2)', 
+                            borderRadius: '50%', 
 
                     }}
 
