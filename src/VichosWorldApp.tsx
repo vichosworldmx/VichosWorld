@@ -16,7 +16,7 @@ export const VichosWorldApp = () => {
 
     const [productsToShow, setProductsToShow] = useState<Product[]>([])
 
-    const phoneNumber = '+525574462403'; 
+    const phoneNumber = '+525532261358'; 
     const message = 'Me interesa algunos productos que he visto en Vicho´s World'; 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     const facebookURL = `https://www.facebook.com/vichosworld`;
